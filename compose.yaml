@@ -15,7 +15,7 @@ services:
     deploy:
       replicas: 1
 
-  book:
+  book_service:
     image: nagesh2devops/library01:book_image
     ports: 
       - "5002:5002"
@@ -23,7 +23,7 @@ services:
       replicas: 1
     
 
-  borrow:
+  borrow_service:
      image: nagesh2devops/library01:borrow_image
      ports:
       - "5003:5003"
