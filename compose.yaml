@@ -6,9 +6,7 @@ services:
    ports:
      - "3306:3306"
    deploy:
-    replicas: 1
-   volumes:
-     - dbvolume:/var/lib/mysql/
+    replicas: 2
 
   auth:
     image: nagesh2devops/library:auth_image
