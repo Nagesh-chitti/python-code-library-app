@@ -14,8 +14,6 @@ services:
       - "5001:5001"
     deploy:
       replicas: 1
-    volumes:
-     - dbvolume:/var/lib/docker/
 
   book:
     image: nagesh2devops/library:book_image
@@ -23,8 +21,7 @@ services:
       - "5002:5002"
     deploy:
       replicas: 1
-    volumes:
-      - dbvolume:/var/lib/docker
+    
 
   borrow:
      image: nagesh2devops/library:borrow_image
@@ -39,8 +36,5 @@ services:
       - "5000:5000"
     deploy:
       replicas: 1
-
-volumes:
-  dbvolume:
 
       
