@@ -6,32 +6,43 @@ services:
    ports:
      - "3306:3306"
    deploy:
-    replicas: 2
+    replicas: 1
+   volumes:
+     - dbvolume:/var/lib/docker/
 
   auth:
     image: nagesh2devops/library:auth_image
     ports:
       - "5001:5001"
     deploy:
-      replicas: 2
+      replicas: 1
+    volumes:
+     - dbvolume:/var/lib/docker/
 
   book:
     image: nagesh2devops/library:book_image
     ports: 
       - "5002:5002"
     deploy:
-      replicas: 2
+      replicas: 1
+    volumes:
+      - dbvolume:/var/lib/docker
 
   borrow:
      image: nagesh2devops/library:borrow_image
      ports:
       - "5003:5003"
      deploy:
-       replicas: 2
+       replicas: 1
 
   frontend:
     image: nagesh2devops/library:frontend_image
     ports:
       - "5000:5000"
     deploy:
-      replicas: 2
+      replicas: 1
+
+volumes:
+  dbvolume:
+
+      
