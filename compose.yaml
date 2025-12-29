@@ -2,21 +2,21 @@
 version: "3"
 services:
   db:
-   image: nagesh2devops/library:dbimage
+   image: nagesh2devops/library01:dbimage
    ports:
      - "3306:3306"
    deploy:
     replicas: 2
 
   auth:
-    image: nagesh2devops/library:auth_image
+    image: nagesh2devops/library01:auth_image
     ports:
       - "5001:5001"
     deploy:
       replicas: 1
 
   book:
-    image: nagesh2devops/library:book_image
+    image: nagesh2devops/library01:book_image
     ports: 
       - "5002:5002"
     deploy:
@@ -24,14 +24,14 @@ services:
     
 
   borrow:
-     image: nagesh2devops/library:borrow_image
+     image: nagesh2devops/library01:borrow_image
      ports:
       - "5003:5003"
      deploy:
        replicas: 1
 
   frontend:
-    image: nagesh2devops/library:frontend_image
+    image: nagesh2devops/library01:frontend_image
     ports:
       - "5000:5000"
     deploy:
